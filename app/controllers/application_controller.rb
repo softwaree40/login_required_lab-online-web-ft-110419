@@ -3,21 +3,16 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-   def home
-     
-   end
-   
-  def current_user
-     session[:name]
+     def home
   end
-    
+
+  def current_user
+    session[:name]
+  end
+
 
   def require_login
-    unless session.include? :name
-    redirect_to login_path 
-     end
+    redirect_to login_path unless session.include? :name
   end
-
-
   
 end
