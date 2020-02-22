@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       session[:name] = params[:name]
       redirect_to root_path
     end
+    
   end
 
   def destroy
