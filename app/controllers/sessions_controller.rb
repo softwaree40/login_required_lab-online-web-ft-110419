@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     end
     
     def create
-      if !params[:name] || params[:name]
+      if !params[:name] || params[:name].emtpy?
       redirect_to login_path
       else
       session[:name] = params[:name]
